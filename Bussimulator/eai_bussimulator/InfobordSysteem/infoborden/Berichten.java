@@ -1,4 +1,4 @@
-package infoborden;
+package InfobordSysteem.infoborden;
 
 import java.io.IOException;
 import java.util.HashMap;

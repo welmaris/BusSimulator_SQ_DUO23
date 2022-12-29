@@ -1,4 +1,4 @@
-package infoborden;
+package InfobordSysteem.infoborden;
 
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -9,7 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import tijdtools.InfobordTijdFuncties;
+import Tijdtools.tijdtools.InfobordTijdFuncties;
 
 public class Infobord extends Application{
 	private String titel = "Bushalte XX in richting YY";

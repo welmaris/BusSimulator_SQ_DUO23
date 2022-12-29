@@ -1,4 +1,4 @@
-package mockDatabaseLogger;
+package DatabaseLogger.mockDatabaseLogger;
 
 import javax.jms.Connection;
 import javax.jms.Destination;

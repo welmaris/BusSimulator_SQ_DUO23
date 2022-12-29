@@ -1,4 +1,4 @@
-package tijdtools;
+package Tijdtools.tijdtools;
 
 public class Tijd
 {

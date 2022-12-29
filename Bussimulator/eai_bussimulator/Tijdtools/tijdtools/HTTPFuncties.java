@@ -1,4 +1,4 @@
-package tijdtools;
+package Tijdtools.tijdtools;
 
 import java.io.BufferedReader;
 import java.io.IOException;

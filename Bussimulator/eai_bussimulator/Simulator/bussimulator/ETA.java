@@ -1,4 +1,4 @@
-package bussimulator;
+package Simulator.bussimulator;
 
 public class ETA {
 	String halteNaam;

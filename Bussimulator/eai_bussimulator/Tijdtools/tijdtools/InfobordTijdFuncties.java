@@ -1,4 +1,4 @@
-package tijdtools;
+package Tijdtools.tijdtools;
 
 import java.io.IOException;
 import org.codehaus.jackson.map.ObjectMapper;

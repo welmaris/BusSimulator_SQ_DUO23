@@ -1,4 +1,4 @@
-package tijdtools;
+package Tijdtools.tijdtools;
 
 import java.io.IOException;
 import com.thoughtworks.xstream.XStream;

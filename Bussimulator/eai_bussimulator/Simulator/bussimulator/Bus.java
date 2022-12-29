@@ -1,7 +1,7 @@
-package bussimulator;
+package Simulator.bussimulator;
 
 import com.thoughtworks.xstream.XStream;
-import bussimulator.Halte.Positie;
+import Simulator.bussimulator.Halte.Positie;
 
 public class Bus{
 

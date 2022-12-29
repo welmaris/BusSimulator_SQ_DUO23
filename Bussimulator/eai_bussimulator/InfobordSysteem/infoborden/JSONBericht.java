@@ -1,6 +1,6 @@
-package infoborden;
+package InfobordSysteem.infoborden;
 
-import tijdtools.InfobordTijdFuncties;
+import Tijdtools.tijdtools.InfobordTijdFuncties;
 
 public class JSONBericht {
 	private int tijd;

@@ -1,4 +1,4 @@
-package mockDatabaseLogger;
+package DatabaseLogger.mockDatabaseLogger;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package infoborden;
+package InfobordSysteem.infoborden;
 
 import javax.jms.Connection;
 import javax.jms.Destination;

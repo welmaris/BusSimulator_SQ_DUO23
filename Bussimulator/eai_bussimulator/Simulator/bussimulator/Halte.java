@@ -1,4 +1,4 @@
-package bussimulator;
+package Simulator.bussimulator;
 
 public enum Halte {
 	A (new Positie(1,1)),

@@ -1,10 +1,10 @@
-package bussimulator;
+package Simulator.bussimulator;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 
-import tijdtools.TijdFuncties;
+import Tijdtools.tijdtools.TijdFuncties;
 
 public class Runner implements Runnable {
 

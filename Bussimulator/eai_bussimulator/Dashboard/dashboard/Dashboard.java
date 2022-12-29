@@ -1,4 +1,4 @@
-package dashboard;
+package Dashboard.dashboard;
 
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -11,13 +11,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import mockDatabaseLogger.ArrivaLogger;
-import infoborden.Infobord;
+import DatabaseLogger.mockDatabaseLogger.ArrivaLogger;
+import InfobordSysteem.infoborden.Infobord;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-import bussimulator.Runner;
+import Simulator.bussimulator.Runner;
 
 public class Dashboard extends Application {
 		

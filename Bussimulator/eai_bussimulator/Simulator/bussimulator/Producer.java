@@ -1,4 +1,4 @@
-package bussimulator;
+package Simulator.bussimulator;
 
 import java.util.Date;
 

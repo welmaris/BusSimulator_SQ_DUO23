@@ -1,4 +1,4 @@
-package infoborden;
+package InfobordSysteem.infoborden;
 
 import javax.jms.JMSException;
 import javax.jms.Message;
