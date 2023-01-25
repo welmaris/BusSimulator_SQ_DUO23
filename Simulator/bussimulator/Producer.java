@@ -31,7 +31,7 @@ public class Producer {
             connection.close();
     	} catch (JMSException e) {
     		e.printStackTrace();
-    	}
+    	} // TODO: Use finally{} for connection.close()?
     }
         
     

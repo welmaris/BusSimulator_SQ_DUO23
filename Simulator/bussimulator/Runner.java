@@ -14,7 +14,7 @@ public class Runner implements Runnable {
 	private static int syncInterval=5;
 
 	private static void addBus(int starttijd, Bus bus){
-		ArrayList<Bus> bussen = new ArrayList<Bus>();
+		ArrayList<Bus> bussen = new ArrayList<>();
 		if (busStart.containsKey(starttijd)) {
 			bussen = busStart.get(starttijd);
 		}
