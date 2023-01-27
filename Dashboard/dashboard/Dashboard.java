@@ -62,21 +62,17 @@ public class Dashboard extends Application {
     }
 
     private void addButtons(GridPane pane, EventHandler<ActionEvent> startButtonEventHandler) {
-//    Button 1: start bord
         Button startBordButton = createDashboardButton("Start Bord", startButtonEventHandler);
         pane.add(startBordButton, 1, 5);
 
-//    Button 2: start
         Button startButton = createDashboardButton("Start Alles", e -> startAlles());
         pane.add(startButton, 2, 5);
 
-//    Button 3: start Logger
         Button loggerButton = createDashboardButton("Start Logger", e -> thread(new ArrivaLogger(), false));
         pane.add(loggerButton, 3, 5);
     }
 
     private GridPane createGridPane() {
-//    create Pane
         GridPane pane = new GridPane();
         pane.setAlignment(Pos.CENTER);
         pane.setPadding(new Insets(11.5, 12.5, 13.5, 14.5));
