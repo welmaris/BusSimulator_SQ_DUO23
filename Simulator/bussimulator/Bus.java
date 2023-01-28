@@ -1,7 +1,8 @@
 package Simulator.bussimulator;
 
-import com.thoughtworks.xstream.XStream;
 import Simulator.bussimulator.Halte.Positie;
+
+import java.util.ArrayList;
 
 public class Bus{
 
@@ -69,42 +70,41 @@ public class Bus{
 		}
 		return eindpuntBereikt;
 	}
-	
-	public void sendETAs(int nu){
-		int i=0;
-		Bericht bericht = new Bericht(lijn.name(),bedrijf.name(),busID,nu);
+
+	public Bericht createBericht(int nu){
+		return new Bericht(lijn.name(), bedrijf.name(), busID, nu);
+	}
+
+	public ArrayList<ETA> getETAs(int nu) {
+		ArrayList<ETA> ETAs = new ArrayList<>();
+
 		if (bijHalte) {
 			ETA eta = new ETA(lijn.getHalte(halteNummer).name(),lijn.getRichting(halteNummer)*richting,0);
-			bericht.ETAs.add(eta);
+//			bericht.ETAs.add(eta);
+			ETAs.add(eta);
 		}
-		Positie eerstVolgende=lijn.getHalte(halteNummer+richting).getPositie();
+		Halte.Positie eerstVolgende=lijn.getHalte(halteNummer+richting).getPositie();
 		int tijdNaarHalte=totVolgendeHalte+nu;
-		for (i = halteNummer+richting ; !(i>=lijn.getLengte()) && !(i < 0); i=i+richting ){
+		for (int i = halteNummer+richting ; !(i>=lijn.getLengte()) && !(i < 0); i=i+richting ){
 			tijdNaarHalte+= lijn.getHalte(i).afstand(eerstVolgende);
 			ETA eta = new ETA(lijn.getHalte(i).name(), lijn.getRichting(i)*richting,tijdNaarHalte);
 //			System.out.println(bericht.lijnNaam + " naar halte" + eta.halteNaam + " t=" + tijdNaarHalte);
-			bericht.ETAs.add(eta);
+//			bericht.ETAs.add(eta);
+			ETAs.add(eta);
 			eerstVolgende=lijn.getHalte(i).getPositie();
 		}
-		bericht.eindpunt=lijn.getHalte(i-richting).name();
-		sendBericht(bericht);
-	}
-	
-	public void sendLastETA(int nu){
-		Bericht bericht = new Bericht(lijn.name(),bedrijf.name(),busID,nu);
-		String eindpunt = lijn.getHalte(halteNummer).name();
-		ETA eta = new ETA(eindpunt,lijn.getRichting(halteNummer)*richting,0);
-		bericht.ETAs.add(eta);
-		bericht.eindpunt = eindpunt;
-		sendBericht(bericht);
+		return ETAs;
 	}
 
-	public void sendBericht(Bericht bericht){
-    	XStream xstream = new XStream();
-    	xstream.alias("Bericht", Bericht.class);
-    	xstream.alias("ETA", ETA.class);
-    	String xml = xstream.toXML(bericht);
-    	Producer producer = new Producer();
-    	producer.sendBericht(xml);		
+	public ETA getETA(){
+		return new ETA(getEindpuntName(), lijn.getRichting(halteNummer)*richting, 0);
 	}
+
+	public String getEindpuntName(){
+		return lijn.getHalte(lijn.getLengte()-richting).name();
+//		Blijkbaar is dit ook eindpunt
+//		return lijn.getHalte(halteNummer).name();
+	}
+
+
 }

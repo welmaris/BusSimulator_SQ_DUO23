@@ -12,6 +12,7 @@ public class Runner implements Runnable {
 	private static ArrayList<Bus> actieveBussen = new ArrayList<Bus>();
 	private static int interval=1000;
 	private static int syncInterval=5;
+	private static final ETAHandler etaHandler = new ETAHandler();
 
 	private static void addBus(int starttijd, Bus bus){
 		ArrayList<Bus> bussen = new ArrayList<>();
@@ -37,7 +38,7 @@ public class Runner implements Runnable {
 			Bus bus = itr.next();
 			boolean eindpuntBereikt = bus.move();
 			if (eindpuntBereikt) {
-				bus.sendLastETA(nu);
+				etaHandler.sendLastETA(bus, nu);
 				itr.remove();
 			}
 		}		
@@ -47,7 +48,7 @@ public class Runner implements Runnable {
 		Iterator<Bus> itr = actieveBussen.iterator();
 		while (itr.hasNext()) {
 			Bus bus = itr.next();
-			bus.sendETAs(nu);
+			etaHandler.sendETAs(bus, nu);
 		}				
 	}
 
